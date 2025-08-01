@@ -595,8 +595,17 @@ section {
 ======================== */
 @media (max-width: 768px) {
 
+    .logo-container {
+        margin-right: 0;
+    }
     .menu-toggle {
         display: block;
+        margin-left: 1rem;
+    }
+
+    .navbar {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
     
     .navbar ul {
