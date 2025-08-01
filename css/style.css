@@ -52,13 +52,6 @@ a:hover {
     backdrop-filter: blur(10px);
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-}
-
 .logo-container {
     display: flex;
     align-items: center;
@@ -82,7 +75,6 @@ a:hover {
     filter: brightness(1.1);
 }
 
-
 .site-title {
     font-size: 2rem;
     color: #5b2a86;
@@ -90,6 +82,13 @@ a:hover {
     animation: popIn 0.5s ease-out 0.4s forwards;
     font-family: 'Dancing Script', cursive;
 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
 }
 
 .navbar ul {
@@ -111,6 +110,19 @@ a:hover {
     color: #d65db1;
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: #7a4b94;
+    cursor: pointer;
+}
+
+.menu-close {
+    display: none;
+}
+
 @keyframes popIn {
     0%   { transform: scale(0.8); opacity: 0; }
     100% { transform: scale(1);   opacity: 1; }
@@ -120,8 +132,6 @@ a:hover {
     0%   { transform: translateY(-100%); }
     100% { transform: translateY(0); }
 }
-
-
 
 /* ========================
     Hero Section
@@ -584,8 +594,61 @@ section {
     Responsive Styles
 ======================== */
 @media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+    
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fde2ff;
+        width: 200px;
+        box-shadow: -2px 2px 8px rgba(0,0,0,0.1);
+        border-radius: 0 0 0 8px;
+    }
+    
+    .navbar ul li {
+        border-bottom: 1px solid #f3e8ff;
+    }
+    
+    .navbar ul li:last-child {
+        border-bottom: none;
+    }
+    
+    .navbar ul li a {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar.open ul {
+        display: flex;
+    }
+
+    .navbar ul .menu-close button {
+        position: relative;
+        top: 3.5rem;
+    }
+
+    .menu-close {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 1rem;
+        
+    }
+    .menu-close button {
+        background: none;
+        border: none;
+        font-size: 1.6rem;
+        color: #7a4b94;
+        cursor: pointer;
+    }
+    
     .hero {
-        padding-top: 10rem;
+        padding-top: 15rem;
     }
 
     .hero h1 {
@@ -608,6 +671,24 @@ section {
 
     .skills {
         margin-inline: 1rem;
+    }
+
+    .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7rem;
+        flex-direction: row !important;
+    }
+    
+    .project-links .project-btn {
+        flex: 0 1 auto;
+        width: auto;
+    }
+
+    .project-links > .project-btn:only-child {
+        flex: 1 1 100%;
     }
 
     .footer-content {
